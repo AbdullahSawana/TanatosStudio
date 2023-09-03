@@ -1,0 +1,33 @@
+/* Start Footer Section */
+footer {
+    padding: 20px;
+    background-color: #3b434c;
+    color: $whiteColor;
+    text-transform: uppercase;
+    overflow: hidden;
+
+    @include breakPoint(mobile) {
+        text-align: center;
+    }
+
+    .copyright {
+        float: left;
+    }
+
+    .design {
+        float: right;
+    }
+
+    .design,
+    .copyright {
+        @include breakPoint(mobile) {
+            float: none;
+            display: block;
+            width: fit-content;
+            margin: 15px auto;
+            font-size: 14px;
+        }
+    }
+}
+
+/* End Footer Section */

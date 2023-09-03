@@ -1,0 +1,77 @@
+// Start Global Rules
+* {
+    padding: 0;
+    margin: 0;
+    @include prefixer(box-sizing, border-box, webkit moz o);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.scrolling {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: $mainColor;
+    color: $whiteColor;
+    cursor: pointer;
+    z-index: 10;
+    @include prefixer(transition, $transitionValue, webkit moz o);
+    @include prefixer(border-radius, 5px, webkit moz o);
+    display: none;
+
+    &:hover {
+        background-color: #f68040;
+    }
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include breakPoint(small) {
+        width: 750px;
+    }
+
+    @include breakPoint(medium) {
+        width: 970px;
+    }
+
+    @include breakPoint(large) {
+        width: 1170px;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+::-webkit-scrollbar-track {
+    @include prefixer(border-radius, 13px, webkit moz o);
+    @include prefixer(box-shadow, 0 0 10px inset rgba(55, 80, 94, 0.8), webkit moz o);
+
+}
+
+::-webkit-scrollbar-thumb {
+    @include prefixer(border-radius, 13px, webkit moz o);
+    background-color: $mainColor;
+}

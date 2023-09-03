@@ -1,0 +1,91 @@
+/* End Header*/
+header {
+    position: relative;
+    height: 100vh;
+    background-image: url("../imgs/landing.jpg");
+    @include prefixer(background-size, cover, webkit moz o);
+
+    &::before {
+        @include overlay;
+    }
+
+    .header-content {
+        position: relative;
+        z-index: 2;
+        color: $whiteColor;
+        height: 100%;
+
+        nav {
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 100%;
+
+            span.logo {
+                font-size: 22px;
+
+                .inner-logo {
+                    color: $mainColor;
+                }
+            }
+
+            span.links {
+                float: right;
+
+                i {
+                    cursor: pointer;
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .intro {
+            text-align: center;
+
+            h1 {
+                text-transform: uppercase;
+                margin: 0;
+
+                @include breakPoint(large) {
+                    font-size: 50px;
+                    font-weight: 800;
+                }
+
+                span {
+                    color: $mainColor;
+                }
+            }
+
+            p {
+                margin: 15px auto 25px;
+                font-size: 18px;
+                width: 300px;
+                max-width: 100%;
+                line-height: 1.8;
+            }
+        }
+
+        .btns button {
+            margin: 10px;
+        }
+    }
+
+    .arrow {
+        i {
+            position: absolute;
+            bottom: 20px;
+            color: $whiteColor;
+            cursor: pointer;
+            left: 50%;
+            @include prefixer(transform, translateX(-50%), webkit moz o);
+            @include prefixer(transition, $transitionValue, webkit moz o);
+
+            &:hover {
+                color: $mainColor;
+            }
+        }
+    }
+}
+
+/* Start Header*/

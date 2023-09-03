@@ -1,0 +1,6 @@
+// Mixin Grid System
+@mixin gridSystem($destance, $gap) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($destance, 1fr));
+    gap: $gap;
+}

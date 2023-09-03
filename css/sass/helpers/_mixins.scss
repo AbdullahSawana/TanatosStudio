@@ -1,0 +1,59 @@
+// Start Mixins Screen Media
+@mixin breakPoint($point) {
+    @if($point ==mobile) {
+
+        // Mobile Screen
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+
+    // Tablat Screen
+    @else if ($point ==small) {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+
+    // Pc Screen
+    @else if ($point ==medium) {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+
+    // Large Screen
+    @else if ($point ==large) {
+        @media (min-width: 1199px) {
+            @content;
+        }
+    }
+}
+
+// Mixin Prefix
+@mixin prefixer($proprity, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+        #{"-" + $prefix + "-" + $proprity}: $value;
+    }
+
+    #{$proprity}: $value
+}
+
+// Mixin Opicity All Browers
+@mixin opacity ($value) {
+    zoom: 1;
+    $opacity-alpha: $value * 100;
+    filter: alpha(opacity=$opacity-alpha);
+    opacity: $value;
+}
+
+// Mixin Overlay
+@mixin overlay {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgb(50, 55, 60, 0.9);
+}

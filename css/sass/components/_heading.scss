@@ -1,0 +1,22 @@
+// Main Heading
+.main-heading {
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+
+  span {
+    color: $mainColor;
+  }
+
+  &+p {
+    color: $textColor;
+    margin: 20px auto 50px;
+    width: 400px;
+    max-width: 100%;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}

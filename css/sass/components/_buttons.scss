@@ -1,0 +1,17 @@
+.btn {
+    width: 150px;
+    display: inline-block;
+    margin: auto;
+    color: $whiteColor;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid #DDD;
+    cursor: pointer;
+    @include prefixer(border-radius, 10px, webkit moz o);
+    @include prefixer(transition, $transitionValue, webkit moz o);
+
+    &:hover {
+        background-color: $mainColor;
+        border-color: $mainColor;
+    }
+}

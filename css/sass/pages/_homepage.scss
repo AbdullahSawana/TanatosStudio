@@ -1,0 +1,441 @@
+/* Start Features Secion */
+.features {
+    padding-top: $mainPadding;
+    padding-bottom: $mainPadding;
+
+    .features-content {
+        @include gridSystem(260px, 20px);
+        text-align: center;
+
+        .box {
+            margin: 15px;
+
+            i {
+                color: rgba($mainColor, 0.85);
+                width: 120px;
+                height: 120px;
+                line-height: 120px;
+                border: 2px solid #dcd9d9;
+                @include prefixer(border-radius, 50%, webkit moz o);
+                @include prefixer(transition, $transitionValue, webkit moz o);
+
+
+                &:hover {
+                    color: #FFF;
+                    border-color: $mainColor;
+                    @include prefixer(box-shadow, 0 0 500px inset $mainColor, webkit moz o);
+                }
+            }
+
+            h3 {
+                margin: 20px 0;
+                color: #444;
+                font-weight: normal;
+            }
+
+            p {
+                color: $textColor;
+                line-height: 1.7;
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+/* End Features Secion */
+/* Start Subscribe Secion */
+.subscribe {
+    background-image: url("../imgs/subscripe.jpg");
+    @include prefixer(background-size, cover, webkit moz o);
+    position: relative;
+    padding-top: $mainPadding;
+    padding-bottom: $mainPadding;
+
+    &::before {
+        @include overlay;
+    }
+
+    form {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 500px;
+        max-width: 100%;
+        margin: auto;
+
+        .subscribe-input {
+            padding: 10px;
+            border: none;
+            margin: 20px;
+            @include prefixer(border-radius, 5px, webkit moz o);
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .emails {
+            background-color: $whiteColor;
+            color: $textColor;
+            text-align: left;
+            position: relative;
+            padding: 10px 0;
+            width: 475px;
+            max-width: 100%;
+            margin: 20px auto;
+            z-index: 3;
+
+            li {
+                padding: 5px 10px;
+                cursor: pointer;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 5px;
+                top: -20px;
+                border-width: 10px;
+                border-color: transparent transparent $whiteColor transparent;
+                border-style: solid;
+            }
+        }
+
+        .submit {
+            background-color: $mainColor;
+            color: $whiteColor;
+            border: none;
+            order: -1;
+        }
+    }
+}
+
+/* End Subscribe Secion */
+
+/*Start Our Works Section*/
+.our-works {
+    padding-top: $mainPadding;
+    padding-bottom: $mainPadding;
+
+    .our-works-content {
+        @include gridSystem(270px, 30px);
+        text-align: center;
+        position: relative;
+
+        .box {
+            max-width: 100%;
+            position: relative;
+            overflow: hidden;
+            @include prefixer(border-radius, 20px, webkit moz o);
+
+            &:hover .info {
+                left: 0;
+            }
+
+            img {
+                max-width: 100%;
+            }
+
+            .info {
+                position: absolute;
+                left: -100%;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($mainColor, 0.85);
+                text-align: center;
+                color: $whiteColor;
+                @include prefixer(transition, $transitionValue, webkit moz o);
+
+                h4 {
+                    margin: 40px 0 0;
+                }
+
+                p {
+                    line-height: 1.8;
+                    font-size: 18px;
+                    margin: 10px auto;
+                }
+
+                .show-project:hover {
+                    background-color: $whiteColor;
+                    color: $mainColor;
+                }
+            }
+        }
+    }
+
+    .show-more {
+        width: 180px;
+        color: $textColor;
+        border: 1px solid $textColor;
+        margin: 20px auto;
+        display: block;
+
+        &:hover {
+            color: $whiteColor;
+            border-color: $mainColor;
+        }
+    }
+}
+
+/* End Our Works Section */
+/* Start Testimonials Section*/
+.testimonials {
+    background-image: url("../imgs/testimonials.jpg");
+    @include prefixer(background-size, cover, webkit moz o);
+    position: relative;
+    padding-top: $mainPadding;
+    padding-bottom: $mainPadding;
+    text-align: center;
+
+    &::before {
+        @include overlay;
+    }
+
+    .testimonials-content {
+        position: relative;
+        z-index: 2;
+
+        .client {
+            color: $whiteColor;
+            font-size: 14px;
+
+            @include breakPoint(medium) {
+                font-size: 20px;
+            }
+
+            img {
+                height: 100px;
+                width: 100px;
+                @include prefixer(border-radius, 50%, webkit moz o);
+            }
+
+            p {
+                width: 650px;
+                max-width: 100%;
+                text-align: center;
+                margin: 25px auto;
+                line-height: 1.8;
+                font-style: italic;
+            }
+        }
+
+        .next,
+        .prev {
+            position: absolute;
+            top: 50%;
+            cursor: pointer;
+            color: #888;
+            @include prefixer(transform, translateY(-50%), webkit moz o);
+            @include prefixer(transition, $transitionValue, webkit moz o);
+            display: none;
+
+            &:hover {
+                color: $mainColor;
+            }
+
+            @include breakPoint(small) {
+                display: block;
+            }
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        .prev {
+            left: 20px;
+        }
+    }
+}
+
+/* End Testimonials Section */
+/* Start OurTeam Section */
+.our-team {
+    padding: $mainPadding 0;
+
+    .our-team-content {
+        @include gridSystem(250px, 30px);
+
+        .person {
+            text-align: center;
+            color: $textColor;
+            position: relative;
+            @include prefixer (transition, $transitionValue, webkit moz o);
+            overflow: hidden;
+
+            img {
+                width: 345px;
+                height: 345px;
+                max-width: 100%;
+                @include prefixer (transition, $transitionValue, webkit moz o);
+                @include prefixer (border-radius, 15px, webkit moz o);
+                @include prefixer (filter, grayscale(1), webkit moz o);
+            }
+
+            &:hover img {
+                @include prefixer (filter, grayscale(0), webkit moz o);
+            }
+
+            h3 {
+                text-transform: uppercase;
+                margin: 10px 0;
+            }
+
+            &:hover h3 {
+                color: $mainColor;
+            }
+
+            .social i {
+                font-size: 25px;
+                cursor: pointer;
+                margin: 0 5px;
+                @include prefixer (transition, $transitionValue, webkit moz o);
+            }
+
+            &:hover .fa-facebook {
+                color: #1877f2;
+            }
+
+            &:hover .fa-twitter {
+                color: #1da1f2;
+            }
+
+            &:hover .fa-google-plus {
+                color: #dd4b39;
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 1.6;
+                margin: 10px 0;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+/* End OurTeam Section */
+/* Start Contact Section */
+.contact {
+    background-image: url("../imgs/contact.gif");
+    @include prefixer(background-size, cover, webkit moz o);
+    position: relative;
+    padding-top: $mainPadding;
+    padding-bottom: $mainPadding;
+    text-align: center;
+
+    &::before {
+        @include overlay;
+    }
+
+    form {
+        color: $whiteColor;
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+        margin: auto;
+        width: 700px;
+        max-width: 100%;
+        text-align: center;
+
+        p {
+            color: $whiteColor;
+        }
+
+        .msg {
+            padding: 10px;
+            margin: 10px auto;
+            background-color: $mainColor;
+            width: fit-content;
+            color: $whiteColor;
+            @include prefixer(border-radius, 10px, webkit moz o);
+            display: none;
+        }
+
+        input {
+            width: 48%;
+            margin: 20px 0;
+            height: 40px;
+            padding: 0 10px;
+
+            @include breakPoint(mobile) {
+                float: none;
+                width: 100%;
+            }
+
+            &[type='email'] {
+                float: left;
+            }
+
+            &[type='text'] {
+                float: right;
+            }
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 15px 10px;
+        }
+
+        input,
+        textarea {
+            border: 1px solid #bfbdbd;
+            @include prefixer(border-radius, 10px, webkit moz o);
+            background-color: transparent;
+            caret-color: $mainColor;
+            color: $mainColor;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .info {
+            overflow: hidden;
+            margin: 15px 0;
+
+            input[type='submit'] {
+                float: left;
+                width: 150px;
+                background-color: $mainColor;
+                color: $whiteColor;
+                border-color: $mainColor;
+
+                &:hover {
+                    background-color: transparent;
+                    color: $mainColor;
+                    border-color: $whiteColor;
+                }
+            }
+
+            .form-icons {
+                float: right;
+
+                i {
+                    margin: 5px;
+                    cursor: pointer;
+
+                    &.fa-facebook {
+                        color: #1877f2;
+                    }
+
+                    &.fa-twitter {
+                        color: #1da1f2;
+                    }
+
+                    &.fa-google-plus {
+                        color: #dd4b39;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* End Contact Section */
